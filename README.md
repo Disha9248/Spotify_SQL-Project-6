@@ -4,11 +4,14 @@
 
 [Click Here to get Dataset](https://www.kaggle.com/datasets/sanjanchaudhari/spotify-dataset)
 
+
 ## Overview
 This project involves analyzing a Spotify dataset with various attributes about tracks, albums, and artists using **SQL**. 
 It covers an end-to-end process of normalizing a denormalized dataset, performing SQL queries of varying complexity 
 (easy, medium, and advanced), and optimizing query performance. The primary goals of the project are to practice SQL skills
 and generate valuable insights from the dataset.
+
+---
 
 ## Project Steps
 
@@ -19,6 +22,7 @@ Before diving into SQL, it’s important to understand the dataset thoroughly. T
 - `Album`: The album to which the track belongs.
 - `Album_type`: The type of album (e.g., single or album).
 - Various metrics such as `danceability`, `energy`, `loudness`, `tempo`, and more.
+
 
 
 ### 2. Querying the Data
@@ -35,11 +39,13 @@ After the data is inserted, various SQL queries  written to explore and analyze 
 - Nested subqueries, window functions, CTEs, and performance optimization.
 
 
+
 ### 3. Query Optimization
 In advanced stages, the focus shifts to improving query performance. Some optimization strategies include:
 - **Indexing**: Adding indexes on frequently queried columns.
 - **Query Execution Plan**: Using `EXPLAIN ANALYZE` to review and refine query performance.
 
+---
 
 ## Practice Questions
 
@@ -73,12 +79,13 @@ To improve query performance, carried out the following optimization process:
 - **Initial Query Performance Analysis Using `EXPLAIN`**
     - Began by analyzing the performance of a query using the `EXPLAIN` function.
     - The query retrieved tracks based on the `album_type` column, and the performance metrics were as follows:
-        - Execution time (E.T.): **7 ms**
-        - Planning time (P.T.): **0.17 ms**
+        - Execution time (E.T.): **7.324 ms**
+        - Planning time (P.T.): **0.106 ms**
     - Below is the **screenshot** of the `EXPLAIN` result before optimization:
       
-      ![EXPLAIN Before Index](https://github.com/najirh/najirh-Spotify-Data-Analysis-using-SQL/blob/main/spotify_explain_before_index.png)
+        ![EXPLAIN Before Index](https://github.com/user-attachments/assets/306a722f-ca38-4186-a2a2-45abf30cbf50)
       
+
 
 - **Index Creation on the `album_type` Column**
     - To optimize the query performance, created an index on the `album_type` column. This ensures faster retrieval of rows where the artist is queried.
@@ -86,26 +93,27 @@ To improve query performance, carried out the following optimization process:
       
       ```sql
       CREATE INDEX album_index ON spotify_data(album_type);
-      ```
-      
+     ```
+
+     
 - **Performance Analysis After Index Creation**
     - After creating the index, ran the same query again and observed significant improvements in performance:
-        - Execution time (E.T.): **0.153 ms**
-        - Planning time (P.T.): **0.152 ms**
+        - Execution time (E.T.): **3.126 ms**
+        - Planning time (P.T.): **0.108 ms**
     - Below is the **screenshot** of the `EXPLAIN` result after index creation:
       
-      ![EXPLAIN After Index](https://github.com/najirh/najirh-Spotify-Data-Analysis-using-SQL/blob/main/spotify_explain_after_index.png)
+       ![EXPLAIN After Index](https://github.com/user-attachments/assets/27405565-0614-428e-a757-a4ca347466af)
       
+
 
 - **Graphical Performance Comparison**
     - A graph illustrating the comparison between the initial query execution time and the optimized query execution time after index creation.
     - **Graph view** shows the significant drop in both execution and planning times:
       
-      ![Performance Graph](https://github.com/najirh/najirh-Spotify-Data-Analysis-using-SQL/blob/main/spotify_graphical%20view%203.png)
+      ![Performance_Graph_Before](https://github.com/user-attachments/assets/ee95aded-ee86-437e-9b20-af2f4217bff4)
       
-      ![Performance Graph](https://github.com/najirh/najirh-Spotify-Data-Analysis-using-SQL/blob/main/spotify_graphical%20view%202.png)
-      
-      ![Performance Graph](https://github.com/najirh/najirh-Spotify-Data-Analysis-using-SQL/blob/main/spotify_graphical%20view%201.png)
+      ![Performance_Graph_After](https://github.com/user-attachments/assets/c059758d-486e-4c40-806e-0bda3d6fad48)
+
 
 
 This optimization shows how indexing can drastically reduce query time, improving the overall performance of our database operations in the Spotify project.
@@ -115,4 +123,11 @@ This optimization shows how indexing can drastically reduce query time, improvin
 ## Technology Stack
 - **Database**: PostgreSQL
 - **SQL Queries**: DDL, DML, Aggregations, Joins, Subqueries, Window Functions
-- **Tools**: pgAdmin 4 
+- **Tools**: pgAdmin 4
+
+
+## Conclusion
+
+This project demonstrates the power of data analytics in uncovering trends in music streaming platforms. The insights gained can guide artists, streaming 
+services, and marketers in making informed decisions to enhance user experiences and maximize engagement. Future work could involve integrating additional 
+datasets, such as user demographics or listening patterns, to create a more holistic understanding of track performance.
