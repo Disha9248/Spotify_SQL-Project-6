@@ -90,7 +90,7 @@ To improve query performance, carried out the following optimization process:
 - **Index Creation on the `album_type` Column**
     - To optimize the query performance, created an index on the `album_type` column. This ensures faster retrieval of rows where the artist is queried.
     - **SQL command** for creating the index:
-      
+
       ```sql
       CREATE INDEX album_index ON spotify_data(album_type);
      ```
