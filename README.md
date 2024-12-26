@@ -95,7 +95,6 @@ To improve query performance, carried out the following optimization process:
       CREATE INDEX album_index ON spotify_data(album_type);
      ```
 
-     
 - **Performance Analysis After Index Creation**
     - After creating the index, ran the same query again and observed significant improvements in performance:
         - Execution time (E.T.): **3.126 ms**
