@@ -1,6 +1,6 @@
 # Spotify SQL Project 
 
-![Spotify Logo](https://github.com/najirh/najirh-Spotify-Data-Analysis-using-SQL/blob/main/spotify_logo.jpg)
+![Spotify logo](https://github.com/user-attachments/assets/81d073e0-67e4-452a-a883-1531d6cbcfb7)
 
 [Click Here to get Dataset](https://www.kaggle.com/datasets/sanjanchaudhari/spotify-dataset)
 
